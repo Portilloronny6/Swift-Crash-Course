@@ -93,8 +93,15 @@ let pointOneFourOneFiveNine = 0.14159
 let pi = Double(three) + pointOneFourOneFiveNine
 
 
+// Dates
 
+let myFirstDate: Date = Date()
+let anotherDate: Date = .now
 
+let myFirstNumber: Int = 1
 
+// Use Double for math
+let mySecondNumber: Double = 1.0
 
-
+// Use CGFloat for UI (User Interface) Pixels, FontSize, etc
+let myThirdNumber: CGFloat = 1.0

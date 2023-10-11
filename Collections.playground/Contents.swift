@@ -51,6 +51,8 @@ print(arrayStrings)
 
 arrayStrings.contains("6")
 
+print(arrayStrings[1...3] + arrayStrings[1...])
+
 
 // Sets (El orden no importa. No almacenan valores duplicados)
 
@@ -86,3 +88,30 @@ if let oldKeyValue = dictionary.removeValue(forKey: "language") {
 }
 
 print(dictionary)
+
+
+let dict: [Any] = [
+    ["Nombre": "Ronny", "Casa": 5],
+    [["Hola": true, "Holis": ["Como": "Estas"]]]
+]
+
+for element in dict {
+    print(type(of: element))
+//    print(element is [String: Any])
+    print(element is [[String: Any]])
+}
+
+
+func flattenArray(array: Any) -> [Int] {
+    if let intArray = array as? [Int] {
+        return intArray
+    } else if let nestedArray = array as? [Any] {
+        return nestedArray.flatMap { flattenArray(array: $0) }
+    } else {
+        return []
+    }
+}
+
+let datos = [[1, 2], [[3, 4], [[[5, 6], [[[[[[[2, 3, 4, 5, 6]]], 4]]], 6], [[7, 8], [9, 10]]], [11, 12]]]]
+let flattenedDatos = flattenArray(array: datos)
+print(flattenedDatos)

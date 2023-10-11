@@ -30,3 +30,32 @@ functionWithParameter {
 }
 
 print(array)
+
+
+// ------------
+
+doSomething()
+
+func doSomething(title: String = "Avengers") -> String {
+    
+    // IF title is equal to Avengers
+    if title == "Avengers" {
+        return "Marvel"
+    }
+    
+    return "Not Marvel"
+}
+
+doSomethingElse()
+func doSomethingElse(title: String = "Avengers") -> Void {
+    
+    // MAKE SURE title is equal to Avengers
+    guard title == "Avengers" else {
+        print("Not Marvel")
+        return
+    }
+    
+    print("Marvel")
+}
+
+

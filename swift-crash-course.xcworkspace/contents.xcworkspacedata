@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Variables.playground">
+   </FileRef>
+   <FileRef
       location = "group:Collections.playground">
    </FileRef>
    <FileRef
@@ -12,8 +15,5 @@
    </FileRef>
    <FileRef
       location = "group:Operators.playground">
-   </FileRef>
-   <FileRef
-      location = "group:Variables.playground">
    </FileRef>
 </Workspace>
