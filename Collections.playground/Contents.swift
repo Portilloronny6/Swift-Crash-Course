@@ -103,15 +103,64 @@ for element in dict {
 
 
 func flattenArray(array: Any) -> [Int] {
+    
     if let intArray = array as? [Int] {
         return intArray
-    } else if let nestedArray = array as? [Any] {
-        return nestedArray.flatMap { flattenArray(array: $0) }
-    } else {
-        return []
     }
+    
+    if let nestedArray = array as? [Any] {
+        return nestedArray.flatMap { flattenArray(array: $0) }
+    }
+    
+    return []
+    
 }
 
-let datos = [[1, 2], [[3, 4], [[[5, 6], [[[[[[[2, 3, 4, 5, 6]]], 4]]], 6], [[7, 8], [9, 10]]], [11, 12]]]]
+let datos = [
+    [1, 2], [[3, 4], [[[5, 6], [[[[[[[2, 3, 4, 5, 6]]], 4]]], 6], [[7, 8], [9, 10]]], [11, 12]]]
+]
 let flattenedDatos = flattenArray(array: datos)
 print(flattenedDatos)
+
+
+//print([1, 2, 3, 4, 5] as? [Int])
+
+func getUsername(username: String) -> String {
+    return username
+}
+
+func getUserIsPremium(userIsPremium: Bool) -> Bool {
+    return userIsPremium
+}
+
+
+// Tuple can cambine multiple pieces of data
+func getUserInfo() -> (username: String, isPremium: Bool, isNew: Bool) {
+    
+    let name = getUsername(username: "Ronny")
+    let isPremium = getUserIsPremium(userIsPremium: false)
+    let isNew = true
+    
+    return (name, isPremium, isNew)
+}
+
+let username: String = "Ronny"
+let userIsPremium: Bool = false
+let userIsNew: Bool = true
+
+var userData1: String = username
+var userData2: (String, Bool, Bool) = (username, userIsPremium, userIsNew)
+
+let info1 = getUserInfo()
+
+print(info1.isNew)
+
+func doSomethingWithUserInfo(info: (username: String, isPremium: Bool, isNew: Bool)) {
+    
+}
+
+
+let info = getUserInfo()
+doSomethingWithUserInfo(info: info)
+
+

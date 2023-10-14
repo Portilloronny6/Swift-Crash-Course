@@ -2,6 +2,21 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:AccessControl.playground">
+   </FileRef>
+   <FileRef
+      location = "group:Classes.playground">
+   </FileRef>
+   <FileRef
+      location = "group:Enums.playground">
+   </FileRef>
+   <FileRef
+      location = "group:Structs.playground">
+   </FileRef>
+   <FileRef
+      location = "group:OOP.playground">
+   </FileRef>
+   <FileRef
       location = "group:Variables.playground">
    </FileRef>
    <FileRef
