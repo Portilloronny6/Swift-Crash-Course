@@ -2,6 +2,15 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Protocols.playground">
+   </FileRef>
+   <FileRef
+      location = "group:FilterSortMap.playground">
+   </FileRef>
+   <FileRef
+      location = "group:Loops.playground">
+   </FileRef>
+   <FileRef
       location = "group:AccessControl.playground">
    </FileRef>
    <FileRef

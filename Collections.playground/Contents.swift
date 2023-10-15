@@ -164,3 +164,76 @@ let info = getUserInfo()
 doSomethingWithUserInfo(info: info)
 
 
+struct TitlesModel {
+    let title1: String
+    let title2: String
+}
+
+func doSomething(value: TitlesModel) {
+    
+}
+
+
+doSomething(value: TitlesModel(title1: "Totona", title2: "Vagina"))
+
+
+// ----------------------------------------------
+
+let apple: String = "Apple"
+let orange: String = "Orange"
+
+let fruits: [String] = ["Apple", "Orange"]
+let fruitsArray: [String] = ["Apple", "Orange", "Banana", "Mango"]
+
+let count = fruitsArray.count
+//let firstItem = fruitsArray.first
+let lastItem = fruitsArray.last
+
+if let firstItem = fruitsArray.first { // <--- es mas seguro en caso de que este vacio el array
+    print(firstItem)
+}
+
+
+fruitsArray.indices
+
+if fruitsArray.indices.contains(4) {
+    let item = fruitsArray[4]
+}
+
+fruitsArray.indices.contains(4)
+
+// Los diccionarios son safer de usar en comparacion a los array porque si no existe una clave en un diccionario, simplemente devolvera nil y no crasheara el programa
+
+var anotherDictionary: [Int: String] = [
+    1: "Ronny",
+    2: "Portillo"
+]
+
+let key = anotherDictionary[2]
+
+struct PostModel {
+    let id: String
+    let title: String
+    let likeCount: Int
+}
+
+
+var postArray: [PostModel] = [
+    PostModel(id: "abc123", title: "Post 1", likeCount: 5),
+    PostModel(id: "xhs324", title: "Post 2", likeCount: 52),
+    PostModel(id: "wfj435", title: "Post 3", likeCount: 123),
+]
+
+if postArray.indices.contains(2) {
+    print(postArray[2])
+}
+
+
+var postDict: [String: PostModel] = [
+    "abc123": PostModel(id: "abc123", title: "Post 1", likeCount: 5),
+    "xhs324": PostModel(id: "xhs324", title: "Post 2", likeCount: 52),
+    "wfj435": PostModel(id: "wfj435", title: "Post 3", likeCount: 123),
+]
+
+
+let post: PostModel? = postDict["abc123"]
